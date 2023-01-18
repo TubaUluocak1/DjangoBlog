@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Giriş {% endblock %}
+
+{% block content %}
+
+<br/>
+<div class="container mb-5">
+    <div class="col">
+        <h1>Giriş</h1>
+        <hr/>
+<form class="my-5" method="POST">
+    {% csrf_token %}
+    {% if error %}
+    <div class="alert alert-danger">
+        {{error}}
+    </div>
+    {% endif %}
+    <div class="mb-3">
+<label for="username" class="form-label">Kullanıcı Adı</label>
+<input type="text" name="username" class="form-control">
+</div>
+<div class="mb-3">
+<label for="password" class="form-label">Şifre</label>
+<input type="password" name="password" class="form-control">
+</div>
+<div class="mb-3"></div>
+    <button type="submit" class="btn btn-primary" value="Login">Giriş</button>
+    
+</form>
+
+
+
+    </div>
+    
+</div>
+<br/>
+<br/>
+<br/>
+
+{% endblock %}

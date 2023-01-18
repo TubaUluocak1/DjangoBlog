@@ -1,0 +1,28 @@
+* {margin:0;
+   padding:0;
+   box-sizing: border-box;
+   font-family: Calibri;
+  }
+.btn,
+.nav-item,
+.dropdown-item {font-size: 16px;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin-right: 15px;
+               }
+.btn,
+.fa-solid,
+.nav-link {color:#000;
+          }
+
+.nav-link:hover {color:#f00;} 
+.btn:hover,
+.dropdown-item:hover {background-color: #f00;
+                      color:#fff;
+                      border-color: #f00;
+                     }
+.fa-solid {font-size: 25px;}
+.fa-solid:hover {color:#f00;}
+
+
+

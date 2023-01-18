@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Üye Ol {% endblock %}
+
+{% block content %}
+
+<br/>
+<div class="container mb-3">
+    <div class="col">
+        <h1>Üye Ol</h1>
+        <hr/>
+<form class="my-3" method="POST">
+    {% csrf_token %}
+    {% if error %}
+    <div class="alert alert-danger">
+        {{error}}
+    </div>
+    {% endif %}
+<div class="mb-3">
+<label for="username" class="form-label">Kullanıcı Adı</label>
+<input type="text" name="username" class="form-control" value="{{username}}">
+</div>
+<div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="text" name="email" class="form-control" value="{{email}}">
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+        <label for="firstname" class="form-label">Adınız</label>
+        <input type="text" name="firstname" class="form-control" value="{{firstname}}">
+        </div>
+        <div class="col">
+            <label for="lastname" class="form-label">Soyadınız</label>
+            <input type="text" name="lastname" class="form-control" value="{{lastname}}">
+            </div>
+        </div>   
+<div class="row mb-3">
+    <div class="col">
+<label for="password" class="form-label">Şifre</label>
+<input type="password" name="password" class="form-control">
+</div>
+<div class="col">
+    <label for="repassword" class="form-label">Tekrar Şifre</label>
+    <input type="password" name="repassword" class="form-control">
+    </div>
+</div>
+<div class="mb-3"></div>
+    <button type="submit" class="btn btn-primary" value="Register">Kaydol</button>
+    
+</form>
+
+
+
+    </div>
+    
+</div>
+
+
+{% endblock %}

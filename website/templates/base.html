@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="Sayfanın Açıklaması">
+    <meta name="keywords" content="Anahtar Kelimeler">
+    <meta name="author" content="Tuğba Uluocak">
+    <link rel="stylesheet" href="{% static 'css/fontawesomefree/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesomefree/webfonts/fa-solid-900.woff2' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesomefree/webfonts/fa-solid-900.ttf' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesomefree/webfonts/fa-regular-400.woff2' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesomefree/webfonts/fa-regular-400.ttf' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block css_files %} {% endblock %}
+
+</head>
+<body class="bg-white">
+  
+  {% include 'partials/_navbar.html' %}  
+
+  {% block content %} 
+  
+  {% endblock %}
+
+  {% include 'partials/_footer.html' %}
+
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/base.js' %}"></script>
+    {% block js_files %}{% endblock %}
+</body>
+</html>
+

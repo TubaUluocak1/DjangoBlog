@@ -1,0 +1,74 @@
+{%  load static %}
+<nav class="navbar navbar-expand bg-dark " style="height: 30px;">
+  <div class="container-fluid ">
+  <ul class="navbar-nav ms-auto" style="color: #fff;">
+    {% if user.is_authenticated %}
+       <li class="nav-item"><a  class="nav-link" href="{% url 'logout' %}" style="color: #fff; text-transform: none; font-weight: lighter;">Çıkış</a></li>
+       <li class="nav-item"><a  class="nav-link" href="" style="color: #fff; text-transform: none; font-weight: lighter;">Hoşgeldiniz,{{user.get_full_name}}</a></li>
+    {% else %}
+       <li class="nav-item"><a  class="nav-link" href="{% url 'login' %}" style="color: #fff; text-transform: none; font-weight: lighter;">Giriş</a></li>
+       <li class="nav-item"><a  class="nav-link" href="{% url 'register' %}" style="color: #fff; text-transform: none; font-weight: lighter;">Üye Ol</a></li>
+    {% endif %}  
+ </ul>
+</div>
+</nav>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  
+    <div class="container-fluid ">
+      <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo.jpg' %}"></a>
+      <span class="navbar-toggler me-xs-1 me-sm-3" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars-staggered"></i>
+      </span>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+            data-bs-toggle="dropdown" aria-expanded="false">
+              Pages
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item text-center" href="{% url 'pages1' %}">Pages1</a></li>
+              <li><a class="dropdown-item text-center" href="#">Pages2</a></li>
+              <li><a class="dropdown-item text-center" href="#">Pages3</a></li>
+              <li><a class="dropdown-item text-center" href="#">Pages4</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" 
+            aria-expanded="false">
+              CATEGORIES
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item text-center" href="{% url 'categories1' %}">Category1</a></li>
+              <li><a class="dropdown-item text-center" href="#">Category2</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-center" href="#">Category3</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tecnology</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+        </ul>
+
+        
+
+
+        <form class="d-flex"  action="#">
+          
+          <input class="form-control me-2" type="search"  placeholder="Arama yapınız" aria-label="Search">
+          <button class="btn btn-outline-dark" type="submit">Ara</button>
+          
+        </form>
+      </div>
+    </div>
+  </nav>
